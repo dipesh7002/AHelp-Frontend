@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const createAxiosInstance = () => {
+ const createAxiosInstance = () => {
   return axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,
     timeout: 5000,
@@ -9,3 +9,5 @@ export const createAxiosInstance = () => {
     },
   });
 };
+
+export const api = createAxiosInstance()

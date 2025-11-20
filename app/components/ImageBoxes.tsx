@@ -8,8 +8,9 @@ const norm: Variants = {
 };
 interface SlideValues {
   values: [string, string][];
-  //   width: number
-  //   height: number
+    width?: number
+    height?: number
+    margin_x?: number
 }
 
 export default function SlidingBoxes({
@@ -29,7 +30,13 @@ export default function SlidingBoxes({
         return (
           <div
             key={index}
-            className="flex flex-col justify-center  items-center bg-gray-700 text-white rounded-3xl mx-3 hover:shadow-md hover:shadow-blue-500 w-md p-4"
+            className={
+          `flex flex-col justify-center items-center bg-white text-black 
+           rounded-2xl cursor-pointer hover:shadow-lg
+           ${image_list.width ? `w-${image_list.width}` : "w-md"}
+           ${image_list.height ? `lh-${image_list.height}` : "h-md"}
+           ${image_list.margin_x? `mx-${image_list.margin_x}`:"mx-3"}`
+        }
           >
             <Image
               src={img_url}
@@ -38,7 +45,7 @@ export default function SlidingBoxes({
               height={100}
               className="my-5"
             />
-            <p>{img_desc}</p>
+            <p className="px-5">{img_desc}</p>
           </div>
         );
       })}

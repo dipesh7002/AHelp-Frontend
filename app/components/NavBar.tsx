@@ -11,29 +11,28 @@ export default function NavBar() {
   return (
     <div className="sticky top-0 z-50">
       <motion.div
-        className="flex justify-between items-center bg-gray-900 text-slate-300 px-10 rounded-1xl"
+        className="flex justify-between items-center bg-slate-100 shadow-lg text-black px-10 rounded-4xl mb-5"
         variants={norm}
         initial="hidden"
         animate="visible"
       >
         <div className="flex mx-20">
-          <Link href="/newhome">
-            <div className="mx-10 my-10 hover:text-white hover:font-extrabold cursor-pointer">
+          <Link href="/"> <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
               Home
             </div>
           </Link>
           <Link href="/newhome">
-            <div className="mx-10 my-10 hover:text-white hover:font-extrabold cursor-pointer">
+            <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
               Services
             </div>
           </Link>
           <Link href="/about">
-            <div className="mx-10 my-10 hover:text-white hover:font-extrabold cursor-pointer">
+            <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
               About
             </div>
           </Link>
           <Link href="/writers">
-            <div className="mx-10 my-10 hover:text-white hover:font-extrabold cursor-pointer">
+            <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
               Writers
             </div>
           </Link>
