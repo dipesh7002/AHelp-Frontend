@@ -9,39 +9,38 @@ const norm: Variants = {
 };
 export default function NavBar() {
   return (
-    <div className="sticky top-0 z-50">
+    <div className="sticky top-0 left-0">
       <motion.div
         className="flex justify-between items-center bg-slate-100 shadow-lg text-black px-10 rounded-4xl mb-5"
         variants={norm}
         initial="hidden"
         animate="visible"
       >
-        <div className="flex mx-20">
-          <Link href="/"> <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
+        <div className="grid grid-cols-5 mx-20">
+          <Link href="/"> 
+          <div className="px-10 my-10 hover:font-extrabold cursor-pointer">
               Home
             </div>
           </Link>
           <Link href="/newhome">
-            <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
+            <div className="px-10 my-10 hover:font-extrabold cursor-pointer">
               Services
             </div>
           </Link>
           <Link href="/about">
-            <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
+            <div className="px-10 my-10 hover:font-extrabold cursor-pointer">
               About
             </div>
           </Link>
           <Link href="/writers">
-            <div className="mx-10 my-10 hover:font-extrabold cursor-pointer">
+            <div className="px-10 my-10 hover:font-extrabold cursor-pointer">
               Writers
             </div>
           </Link>
         </div>
-        <div>
-          <div className="mx-10 my-10 hover:text-white hover:font-extrabold cursor-pointer">
+          <Link href="/signin" className="mx-10 my-10 hover:text-white hover:font-extrabold cursor-pointer">
             <Button text="Sign IN"/>
-          </div>
-        </div>
+          </Link>
       </motion.div>
     </div>
   );

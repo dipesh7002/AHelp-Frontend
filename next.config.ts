@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-      images: {remotePatterns: [
+      images: {
+       unoptimized: true, 
+        remotePatterns: [
       {
         protocol: 'http',
         hostname: 'localhost',
@@ -19,4 +21,4 @@ const nextConfig: NextConfig = {
 
 }};
 
-export default nextConfig;
+module.exports = nextConfig;

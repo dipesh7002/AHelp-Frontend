@@ -29,9 +29,12 @@ const image_box_data = data
   ? data.map(item => [item.pp, item.rating.toString()] as [string, string])
   : []
   return (
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-200 to-white">
+
     <div className="w-full bg-blue">
     <NavBar />
       <SlidingBoxes image_list={{ values: image_box_data }} />
+    </div>
     </div>
 )
 }

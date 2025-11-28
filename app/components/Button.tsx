@@ -8,7 +8,7 @@ const buttonVariant: Variants = {
 export default function Button({text} : {text: string}){
     return(
         <motion.button
-            className="rounded-lg px-6 py-3 font-medium bg-sky-900 text-white hover:bg-sky-800 cursor-pointer" 
+            className="rounded-4xl px-6 py-3 font-medium bg-sky-900 text-white hover:bg-sky-800 cursor-pointer" 
             variants={buttonVariant}
             whileHover={{
                 scale: 1.1
