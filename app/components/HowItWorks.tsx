@@ -26,7 +26,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-white to-blue-50">
+    <section className="py-20 px-6 bg-gradient-to-b from-white to-blue-50 overflow-x-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,8 +56,15 @@ export default function HowItWorks() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center mb-6 shadow-lg">
                   <step.icon className="w-8 h-8 text-white" />
                 </div>
-                <div className="absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-blue-300 to-transparent hidden md:block" 
-                     style={{ display: index === 3 ? 'none' : 'block' }} />
+
+                {/* Connector line: hidden on small screens, visible on md+, and hidden for the last item */}
+                <div
+                  className={
+                    `absolute top-8 left-1/2 w-1/2 h-0.5 bg-gradient-to-r from-blue-300 to-transparent hidden md:block` +
+                    (index === steps.length - 1 ? " md:hidden" : "")
+                  }
+                />
+
                 <h3 className="text-xl font-bold text-slate-900 mb-3">
                   {step.title}
                 </h3>

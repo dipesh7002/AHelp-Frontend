@@ -54,7 +54,7 @@ export default function SlidingBoxes({
   };
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto px-4 py-8">
+    <div className="relative w-full max-w-7xl mx-auto px-4 py-8 overflow-x-hidden">
       {/* Scrollable Container */}
       <motion.div
         ref={scrollContainerRef}
@@ -77,7 +77,7 @@ export default function SlidingBoxes({
                 y: -8, 
                 transition: { duration: 0.2 } 
               }}
-              className="flex-shrink-0 w-72 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"
+              className="flex-shrink-0 w-64 xs:w-64 sm:w-72 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden group cursor-pointer"
             >
               <div className="relative w-full h-48 bg-slate-100 overflow-hidden">
                 <Image

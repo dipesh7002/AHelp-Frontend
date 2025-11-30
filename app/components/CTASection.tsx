@@ -16,12 +16,12 @@ interface CTASectionProps {
   variant?: "default" | "dark";
 }
 
-export default function CTASection({ 
-  title, 
-  description, 
-  primaryCTA, 
+export default function CTASection({
+  title,
+  description,
+  primaryCTA,
   secondaryCTA,
-  variant = "default" 
+  variant = "default"
 }: CTASectionProps) {
   const isDark = variant === "dark";
 
@@ -40,14 +40,15 @@ export default function CTASection({
             {description}
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={primaryCTA.href}>
+          {/* center both axes, stack on mobile and row on sm+ */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <Link href={primaryCTA.href} className="w-full sm:w-auto">
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className={`group px-8 py-4 font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl ${
-                  isDark 
-                    ? 'bg-white text-slate-900 hover:bg-slate-100' 
+                className={`group w-full sm:w-auto mx-auto px-6 sm:px-8 py-4 font-semibold rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl ${
+                  isDark
+                    ? 'bg-white text-slate-900 hover:bg-slate-100'
                     : 'bg-slate-900 text-white hover:bg-slate-800'
                 }`}
               >
@@ -57,11 +58,11 @@ export default function CTASection({
             </Link>
 
             {secondaryCTA && (
-              <Link href={secondaryCTA.href}>
+              <Link href={secondaryCTA.href} className="w-full sm:w-auto">
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className={`px-8 py-4 font-semibold rounded-xl transition-all duration-200 border ${
+                  className={`w-full sm:w-auto mx-auto px-6 sm:px-8 py-4 font-semibold rounded-xl transition-all duration-200 border ${
                     isDark
                       ? 'border-slate-700 text-white hover:bg-slate-800'
                       : 'border-slate-200 text-slate-900 hover:bg-slate-50'
