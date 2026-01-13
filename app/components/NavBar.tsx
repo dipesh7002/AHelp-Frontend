@@ -54,14 +54,9 @@ export default function NavBar() {
 
           {/* Buttons */}
           <div className="hidden md:flex items-center gap-3">
-            <a
-              href="https://localhost:8000/auth/google/login/?process=login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden sm:block"
-            >
+            <Link href="/signin">
               <Button text="Sign In" />
-            </a>
+            </Link>
             <Link href="/signin_helper">
               <Button text="Become Helper" color="green" />
             </Link>

@@ -105,7 +105,7 @@ const HelperRegistrationForm = () => {
     if (!formData.gender) newErrors.gender = 'Gender is required';
     if (!formData.education) newErrors.education = 'Education is required';
     if (!formData.userImage && !formData.profilePicture) {
-      newErrors.profilePicture = 'At least one profile image is required';
+      newErrors.profilePicture = 'Profile image is required';
     }
 
     setErrors(newErrors);
@@ -213,14 +213,14 @@ const HelperRegistrationForm = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-sm font-medium text-gray-900 mb-2">First Name *</label>
+                    <label className="block text-sm font-medium text-gray-800 mb-2">First Name *</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
                       className={`w-full px-4 py-3 bg-white border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition ${
-                        errors.firstName ? 'border-red-400' : 'border-gray-200'
+                        errors.firstName ? 'border-red-400' : 'border-gray-200 text-black'
                       }`}
                       placeholder="John"
                     />
@@ -234,7 +234,7 @@ const HelperRegistrationForm = () => {
                       name="middleName"
                       value={formData.middleName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition"
+                      className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition text-black"
                       placeholder="Optional"
                     />
                   </div>
@@ -248,7 +248,7 @@ const HelperRegistrationForm = () => {
                     value={formData.lastName}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-3 bg-white border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition ${
-                      errors.lastName ? 'border-red-400' : 'border-gray-200'
+                      errors.lastName ? 'border-red-400' : 'border-gray-200 text-black'
                     }`}
                     placeholder="Doe"
                   />
@@ -262,7 +262,7 @@ const HelperRegistrationForm = () => {
                     value={formData.gender}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-3 bg-white border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition ${
-                      errors.gender ? 'border-red-400' : 'border-gray-200'
+                      errors.gender ? 'border-red-400' : 'border-gray-200 text-black'
                     }`}
                   >
                     <option value="">Select Gender</option>
@@ -291,7 +291,7 @@ const HelperRegistrationForm = () => {
                     value={formData.email}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-3 bg-white border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition ${
-                      errors.email ? 'border-red-400' : 'border-gray-200'
+                      errors.email ? 'border-red-400' : 'border-gray-200 text-black'
                     }`}
                     placeholder="john.doe@example.com"
                   />
@@ -308,7 +308,7 @@ const HelperRegistrationForm = () => {
                         value={formData.password}
                         onChange={handleInputChange}
                         className={`w-full px-4 py-3 bg-white border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition pr-12 ${
-                          errors.password ? 'border-red-400' : 'border-gray-200'
+                          errors.password ? 'border-red-400' : 'border-gray-200 text-black'
                         }`}
                         placeholder="Min. 8 characters"
                       />
@@ -332,7 +332,7 @@ const HelperRegistrationForm = () => {
                         value={formData.confirmPassword}
                         onChange={handleInputChange}
                         className={`w-full px-4 py-3 bg-white border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition pr-12 ${
-                          errors.confirmPassword ? 'border-red-400' : 'border-gray-200'
+                          errors.confirmPassword ? 'border-red-400' : 'border-gray-200 text-black'
                         }`}
                         placeholder="Repeat password"
                       />
@@ -365,7 +365,7 @@ const HelperRegistrationForm = () => {
                     value={formData.education}
                     onChange={handleInputChange}
                     className={`w-full px-4 py-3 bg-white border rounded-xl focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 outline-none transition ${
-                      errors.education ? 'border-red-400' : 'border-gray-200'
+                      errors.education ? 'border-red-400' : 'border-gray-200 text-black'
                     }`}
                   >
                     <option value="">Select Education Level</option>
