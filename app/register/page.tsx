@@ -14,6 +14,7 @@ export default function RegisterPage() {
         email: '',
         password: '',
         confirmPassword: '',
+        role: 'common' as 'common' | 'helper' | 'admin',
     });
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -40,7 +41,8 @@ export default function RegisterPage() {
                 middle_name: formData.middle_name,
                 last_name: formData.last_name,
                 email: formData.email,
-                password: formData.password
+                password: formData.password,
+                role: formData.role
             });
             router.push("/signin");
         }
@@ -113,6 +115,15 @@ export default function RegisterPage() {
                         required
                         className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
                     />
+                    <select
+                        name="role"
+                        value={formData.role}
+                        onChange={(e) => setFormData(prev => ({ ...prev, role: e.target.value as 'common' | 'helper' | 'admin' }))}
+                        className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black"
+                    >
+                        <option value="common">Common User</option>
+                        <option value="helper">Assignment Helper</option>
+                    </select>
                     <button
                         type="submit"
                         disabled={loading}

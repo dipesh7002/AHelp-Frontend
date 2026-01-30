@@ -1,5 +1,6 @@
 import { api } from "@/services/axiosConfig";
 import { useCallback } from "react";
+import { saveAuthTokens, AuthTokens } from "@/utils/auth";
 
 interface LoginPayload {
   email: string;
@@ -14,7 +15,20 @@ const useLoginUser = () => {
       throw new Error("Invalid credentials");
     }
 
-    return response.data; // access + refresh token
+    const tokens: AuthTokens = {
+      access: response.data.access,
+      refresh: response.data.refresh,
+      role: response.data.role,
+      email_verified: response.data.email_verified,
+    };
+    console.log("*****************************************************")
+    console.log("*****************************************************")
+    console.log(tokens)
+    console.log("*****************************************************")
+    console.log("*****************************************************")
+
+    saveAuthTokens(tokens);
+    return tokens;
   }, []);
 
   return { loginUser };

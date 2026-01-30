@@ -27,12 +27,21 @@ const SignInPage = () => {
 
     setLoading(true);
   try {
-    await loginUser({
+    const tokens = await loginUser({
       email,
       password,
     });
 
-    router.push("/dashboard");
+    // Redirect based on role
+    if (tokens.role === 'helper' && tokens.email_verified) {
+      router.push("/dashboard/helper");
+    } else if (tokens.role === 'helper' && !tokens.email_verified) {
+      setError("Please verify your email before logging in. Check your inbox.");
+    } else if (tokens.role === 'admin') {
+      router.push("/dashboard/admin");
+    } else {
+      router.push("/dashboard/user");
+    }
   } catch (e) {
     setError("Invalid email or password. Please try again.");
   } finally {

@@ -2,9 +2,12 @@ import { api } from "@/services/axiosConfig";
 import { useCallback } from "react";
 
 interface RegisterPayload {
-  name: string;
+    first_name: string;
+    middle_name?: string;
+    last_name: string;
   email: string;
   password: string;
+  role?: 'common' | 'helper' | 'admin';
 }
 
 const useRegisterUser = () => {
